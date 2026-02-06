@@ -14,7 +14,7 @@ router.get('/', function (req, res) {
 
 // SHOW (GET)
 router.get('/:id', function (req, res) {
-    res.send('<h1>Dettagli del mio blog</h1> ' + req.params.id);
+    res.send(blogList.id + req.params.id);
 });
 
 // CREATE (POST)

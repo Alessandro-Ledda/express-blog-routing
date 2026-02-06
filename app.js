@@ -4,3 +4,13 @@ const port = 3000;
 
 // importazione router dei blogs
 const blogRouter = require('./routers');
+
+// attivazione cartella public per file statici
+app.use(express.static('public'));
+
+// istanza delle rotte per risorsa blog
+app.use('/posts', blogRouter)
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
