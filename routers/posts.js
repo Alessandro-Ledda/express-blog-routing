@@ -3,12 +3,13 @@ const express = require('express');
 // creazione istanza dell'oggetto rotte di express
 const router = express.Router();
 
-//importo i dati delle pizze ****BONUS****
+//importo i dati dei blog ****BONUS****
+const blogList = require('./../date/posts');
 
 //rotte di CRUD(Create-Read-Update-Delete)
 // INDEX (GET)
 router.get('/', function (req, res) {
-    res.send('<h1> index  del mio blog</h1>');
+    res.json(blogList);
 });
 
 // SHOW (GET)
