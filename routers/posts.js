@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 //importo i dati dei blog ****BONUS****
-const blogList = require('./../date/posts');
+const blogList = require('../data/posts');
 
 //rotte di CRUD(Create-Read-Update-Delete)
 // INDEX (GET)
@@ -14,7 +14,8 @@ router.get('/', function (req, res) {
 
 // SHOW (GET)
 router.get('/:id', function (req, res) {
-    res.send(blogList.id + req.params.id);
+    const post = blogList.find(p => p.id == req.params.id);
+    res.json(post);
 });
 
 // CREATE (POST)
